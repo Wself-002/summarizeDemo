@@ -2,7 +2,7 @@ import { defineConfig, ConfigEnv } from "vite";
 import vue from "@vitejs/plugin-vue";
 import AutoImport from "unplugin-auto-import/vite";
 import Components from 'unplugin-vue-components/vite'
-
+import UnoCSS from 'unocss/vite';
 /**
  * 第一种写法
  */
@@ -21,9 +21,10 @@ export default defineConfig({
             dirs: ["src/components", "src/**/components"],// 你的组件所在的目录路径
             extensions: ["vue"],// 自动导入的组件类型，这里使用了 Vite 提供的默认配置
             include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
-            dts:true, // 是否将组件名转换为 pascalCase（驼峰式命名）
+            dts: true, // 是否将组件名转换为 pascalCase（驼峰式命名）
             deep: true// 遍历子目录。可省略
-          })
+        }),
+        UnoCSS()
     ],
     resolve: {
         alias: {
