@@ -1,13 +1,81 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + Vue + TS</title>
+    <style>
+      .loading_page {
+        z-index: 999999;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .loading {
+        width: fit-content;
+        height: auto;
+      }
+      .loading span {
+        display: inline-block;
+        width: 3vh;
+        height: 3vh;
+        margin-right: 5px;
+        border-radius: 50%;
+        background: linear-gradient(180deg, #ed3e1c 0%, #ffc065 100%);
+        animation: load 1.04s ease infinite;
+      }
+      .loading span:last-child {
+        margin-right: 0px;
+      }
+      @keyframes load {
+        0% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+      .loading span:nth-child(1) {
+        animation-delay: 0.13s;
+      }
+      .loading span:nth-child(2) {
+        animation-delay: 0.26s;
+      }
+      .loading span:nth-child(3) {
+        animation-delay: 0.39s;
+      }
+      .loading span:nth-child(4) {
+        animation-delay: 0.52s;
+      }
+      .loading span:nth-child(5) {
+        animation-delay: 0.65s;
+      }
+      .loading span:nth-child(5) {
+        animation-delay: 0.78s;
+      }
+    </style>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <div class="loading_page">
+        <div class="loading">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
